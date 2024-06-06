@@ -1,0 +1,8 @@
+{
+  "name": "@onisaint/validate-email",
+  "version": "0.1.0",
+  "exports": "./index.ts",
+  "tasks": {
+    "dev": "deno test --watch --allow-net index_test.ts"
+  }
+}
