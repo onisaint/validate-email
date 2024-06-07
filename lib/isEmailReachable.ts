@@ -12,7 +12,7 @@ export async function isEmailReachable(
     /** setting this to `true` skips {@linkcode isEmail} check*/
     skipValidityTest?: boolean;
   } = { skipValidityTest: false }
-) {
+): Promise<boolean> {
   isString(email);
 
   if (!options.skipValidityTest) {

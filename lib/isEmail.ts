@@ -34,7 +34,7 @@ export function isEmail(
     hostWhiteList: [],
     ignoreMaxLength: false,
   }
-) {
+): boolean {
   isString(email);
 
   if (!options?.ignoreMaxLength && email.length > _DEFAULT_MAX_EMAIL_LENGTH) {
