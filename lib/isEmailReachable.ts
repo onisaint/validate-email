@@ -3,9 +3,15 @@ import { isEmail } from "./isEmail.ts";
 
 const _MAIL_IP = "1.1.1.1";
 
+/**
+ * Check if the domain mail servers are reachable
+ */
 export async function isEmailReachable(
   email: string,
-  options: { skipValidityTest?: boolean } = { skipValidityTest: false }
+  options: {
+    /** setting this to `true` skips {@linkcode isEmail} check*/
+    skipValidityTest?: boolean;
+  } = { skipValidityTest: false }
 ) {
   isString(email);
 

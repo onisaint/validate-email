@@ -1,16 +1,33 @@
 import { isString } from "./assert.ts";
 import { isQualifiedDomain } from "./isQualifiedDomain.ts";
 
-const _DEFAULT_MAX_EMAIL_LENGTH = 254;
+const _DEFAULT_MAX_EMAIL_LENGTH = 250;
 const _USER_NAME_REGEXP = new RegExp(
   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))$/
 );
 
+/**
+ * validate correctness of email
+ *
+ * @example
+ * ```ts
+ * isEmail("help+user1@xyz.tld", { hostWhiteList: ["xyz.tld"] })
+ * ```
+ */
 export function isEmail(
   email: string,
   options: {
+    /**
+     * returns `true` if domain matches the list
+     */
     hostWhiteList?: string[];
+    /**
+     * returns `false` if domain matches the list. Takes priority over `options.hostWhiteList`
+     */
     hostBlackList?: string[];
+    /**
+     * validates long email bigger than 250 characters
+     */
     ignoreMaxLength?: boolean;
   } = {
     hostBlackList: [],
