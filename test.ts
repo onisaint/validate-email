@@ -45,6 +45,10 @@ Deno.test("valid email syntax", () => {
 Deno.test("valid mail records", async () => {
   // valid
   assertEquals(await isEmailReachable("help@xyz.com"), true);
+  assertEquals(
+    await isEmailReachable("help@nn.tls", { skipValidityTest: true }),
+    true
+  );
 
   // invalid
   assertEquals(await isEmailReachable("tiyak85307@1234.com"), false);
