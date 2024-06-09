@@ -1,6 +1,6 @@
 # Validate Email
 
-validate emails and checks domains for MX records. 
+validate email and check the mail room is reachable
 
 ### How to use
 
